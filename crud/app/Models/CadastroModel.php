@@ -18,12 +18,13 @@ class CadastroModel extends Model{
 
 	//Metodo GET	
 	public function getCadastro($id = false){
-		if($id == false){
+		if($id === false){
 			return $this->findAll();
 		}
-		return $this->findAll();
+		else{
 			return $this->asArray()
 							->where(['idcadastro'=>$id])
 							->first(); 
+		}
 		}
 	}

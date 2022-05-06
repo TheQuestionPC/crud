@@ -11,8 +11,7 @@ class Responsavel extends BaseController
 		$model = new ResponsavelModel();
 		$data = [
 				'title' => 'Responsável',
-				'responsavel' => $model->paginate(5),
-				'pager' => $model->pager,
+				'responsavel' => $model->getResponsavel(),
 				'msg' => ''
 			];
 		echo view('backend/templates/html-header', $data);
@@ -44,8 +43,8 @@ class Responsavel extends BaseController
 		helper('form');
 
 		if($this->validate([
-			'nomeresponsavel' => ['label' => 'nomeresponsavel', 'rules' => 'required|min_length[3]'],
-			'origemresponsavel' => ['label' => 'origemresponsavel', 'rules' => 'required|min_length[3]']
+			'nomeresponsavel' => ['label' => 'nomeresponsavel', 'rules' => 'required|min_length[3]|is_unique[responsavel.nomeresponsavel]|alpha_space|max_length[20]'],
+			'origemresponsavel' => ['label' => 'origemresponsavel', 'rules' => 'required|min_length[3]|alpha|max_length[20]']
 			]))
 		{
 
@@ -63,8 +62,7 @@ class Responsavel extends BaseController
 
 			$data = [
 				'title' => 'Responsável',
-				'responsavel' => $model->paginate(5),
-				'pager' => $model->pager,
+				'responsavel' => $model->getResponsavel(),
 				'msg' => 'Responsável Cadastrado!'
 			];
 
@@ -80,8 +78,7 @@ class Responsavel extends BaseController
 
 			$data = [
 				'title' => 'Responsável',
-				'responsavel' => $model->paginate(5),
-				'pager' => $model->pager,
+				'responsavel' => $model->getResponsavel(),
 				'msg' => 'Erro ao Cadastrar o Responsável!'
 			];
 

@@ -6,7 +6,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/Home">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -17,6 +17,18 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Início
+      </div>
+     <li class="nav-item">
+        <a class="nav-link" href="/admin/Home">
+          <i class="fas fa-fw fa-list"></i>
+          <span>Home</span></a>
+      </li>
 
 
       <!-- Divider -->
@@ -30,23 +42,27 @@
        <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/Tipo">
-          <i class="fas fa-fw fa-list"></i>
+          <i class="fas fa-fw  fa-indent"></i>
           <span>Tipo</span></a>
       </li>
        <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/Responsavel">
-          <i class="fas fa-fw fa-users"></i>
+          <i class="fas fa-fw fa-university"></i>
           <span>Responsável</span></a>
       </li>
        <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="/admin/Cadastro">
-          <i class="fas fa-fw fa-newspaper"></i>
-          <span>Cadastro</span></a>
+          <i class="fas fa-fw fa-id-card"></i>
+          <span>Cadastrar</span></a>
       </li>
-
-
+       <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/Cadastro/ver/">
+          <i class="fas fa-fw fa-id-card"></i>
+          <span>Ver Cadastros</span></a>
+      </li>
 
   
 
@@ -68,10 +84,6 @@
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
 
     </ul>
     <!-- End of Sidebar -->
@@ -112,6 +124,7 @@
                 </form>
               </div>
             </li>
+            
 
            
             <div class="topbar-divider d-none d-sm-block"></div>

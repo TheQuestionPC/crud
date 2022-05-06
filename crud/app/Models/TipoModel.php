@@ -21,9 +21,10 @@ class TipoModel extends Model{
 		if($id == false){
 			return $this->findAll();
 		}
-		return $this->findAll();
+		else{
 			return $this->asArray()
 							->where(['idtipo'=>$id])
 							->first(); 
+		}
 		}
 	}

@@ -11,8 +11,7 @@ class Tipo extends BaseController
 		$model = new TipoModel();
 		$data = [
 				'title' => 'Tipo',
-				'tipo' => $model->paginate(5),
-				'pager' => $model->pager,
+				'tipo' => $model->getTipo(),
 				'msg' => ''
 			];
 		echo view('backend/templates/html-header', $data);
@@ -43,7 +42,7 @@ class Tipo extends BaseController
 		helper('form');
 
 		if($this->validate([
-			'nometipo' => ['label' => 'Tipo', 'rules' => 'required|min_length[3]']
+			'nometipo' => ['label' => 'Tipo', 'rules' => 'required|min_length[3]|is_unique[tipo.nometipo]|alpha|max_length[12]']
 			]))
 		{
 
@@ -58,8 +57,7 @@ class Tipo extends BaseController
 
 			$data = [
 				'title' => 'Tipo',
-				'tipo' => $model->paginate(5),
-				'pager' => $model->pager,
+				'tipo' => $model->getTipo(),
 				'msg' => 'Tipo Cadastrado!'
 			];
 
@@ -75,8 +73,7 @@ class Tipo extends BaseController
 
 			$data = [
 				'title' => 'Tipo',
-				'tipo' => $model->paginate(5),
-				'pager' => $model->pager,
+				'tipo' => $model->getTipo(),
 				'msg' => 'Erro ao Cadastrar o Tipo!'
 			];
 

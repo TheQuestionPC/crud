@@ -14,7 +14,7 @@
 		  </div>
 
 		  <div class="row">
-		  	<div class="col-md-6">
+		  	<div class="col-md-4">
 		  		<div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Inserir Responsável</h6>
@@ -39,13 +39,13 @@
                 </div>
           </div>
 		  	</div>
-		  	<div class="col-md-6">
+		  	<div class="col-md-8">
 		  		 <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Responsáveis Cadastrados</h6>
                 </div>
                 <div class="card-body">
-                  <table class="table table-bordered dataTable table-striped" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <table class="table table-bordered dataTable table-striped" id="example1" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                   <thead>
                     <tr role="row">
                     	<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Responsáveis</th>
@@ -99,7 +99,7 @@
 						<?php endforeach; ?>
                 </tbody>
                 </table>
-                <?= $pager->links(); ?>
+                
                 </div>
           </div>
 		  	</div>

@@ -30,7 +30,7 @@ class Usuarios extends BaseController
 		helper('form');
 
 		if($this->validate([
-			'user' => ['label' => 'Usuários', 'rules' => 'required|min_length[3]|is_unique[usuarios.user]'],
+			'user' => ['label' => 'Usuários', 'rules' => 'required|min_length[3]|is_unique[usuarios.user]|alpha_numeric'],
 			'senha' => ['label' => 'Senha', 'rules' => 'required|min_length[5]']
 		])){
 

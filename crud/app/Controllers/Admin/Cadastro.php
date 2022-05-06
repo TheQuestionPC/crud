@@ -17,10 +17,8 @@ class Cadastro extends BaseController
 
 		$data = [
 				'title' => 'Cadastro',
-				'cadastro' => $model->paginate(10),
 				'tipo' => $model2->getTipo(),
 				'responsavel' => $model3->getResponsavel(),
-				'pager' => $model->pager,
 				'msg' => ''
 			];
 		echo view('backend/templates/html-header', $data);
@@ -30,6 +28,27 @@ class Cadastro extends BaseController
 		echo view('backend/templates/html-footer');
 	}
 
+public function ver()
+	{
+		$model = new CadastroModel();
+		$model2 = new TipoModel();
+		$model3 = new ResponsavelModel();
+
+
+		$data = [
+				'title' => 'Cadastro',
+				'cadastro' => $model->getCadastro(),
+				'tipo' => $model2->getTipo(),
+				'responsavel' => $model3->getResponsavel(),
+				'pager' => $model->pager,
+				'msg' => ''
+			];
+		echo view('backend/templates/html-header', $data);
+		echo view('backend/templates/header');
+		echo view('backend/pages/cadastro_ver');
+		echo view('backend/templates/footer');
+		echo view('backend/templates/html-footer');
+	}
 
 
 
@@ -56,7 +75,6 @@ class Cadastro extends BaseController
 
 
 
-
 	public function gravar(){
 		$model = new CadastroModel();
 		$model2 = new TipoModel();
@@ -65,8 +83,8 @@ class Cadastro extends BaseController
 		helper('form');
 
 		if($this->validate([
-			'nomecadastro' => ['label' => 'nomecadastro', 'rules' => 'required|min_length[3]'],
-			'email' => ['label' => 'email', 'rules' => 'required|min_length[3]'],
+			'nomecadastro' => ['label' => 'nomecadastro', 'rules' => 'required|min_length[3]|is_unique[cadastro.nomecadastro]|alpha|max_length[12]'],
+			'email' => ['label' => 'email', 'rules' => 'required|min_length[3]|valid_email|is_unique[cadastro.email]'],
 			'tipo' => ['label' => 'tipo', 'rules' => 'required'],
 			'responsavel' => ['label' => 'responsavel', 'rules' => 'required']
 			]))
@@ -95,10 +113,8 @@ class Cadastro extends BaseController
 
 			$data = [
 				'title' => 'Cadastro',
-				'cadastro' => $model->paginate(10),
 				'tipo' => $model2->getTipo(),
 				'responsavel' => $model3->getResponsavel(),
-				'pager' => $model->pager,
 				'msg' => ''
 			];
 
@@ -131,10 +147,8 @@ class Cadastro extends BaseController
 				]);
 				$data = [
 				'title' => 'Cadastro',
-				'cadastro' => $model->paginate(10),
 				'tipo' => $model2->getTipo(),
 				'responsavel' => $model3->getResponsavel(),
-				'pager' => $model->pager,
 				'msg' => 'Cadastro feito com sucesso!'
 			];
 				echo view('backend/templates/html-header', $data);
@@ -152,10 +166,8 @@ class Cadastro extends BaseController
 
 			$data = [
 				'title' => 'Cadastro',
-				'cadastro' => $model->paginate(10),
 				'tipo' => $model2->getTipo(),
 				'responsavel' => $model3->getResponsavel(),
-				'pager' => $model->pager,
 				'msg' => 'Erro ao cadastrar'
 			];
 
@@ -171,7 +183,7 @@ class Cadastro extends BaseController
 		$model = new CadastroModel();
 
 		$model->delete($id);
-		return redirect()->to(base_url('admin/cadastro'));
+		return redirect()->to(base_url('admin/cadastro/ver'));
 	}
 	
 
