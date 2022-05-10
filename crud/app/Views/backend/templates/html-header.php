@@ -21,6 +21,14 @@
 
 
 
+
+  <link rel="stylesheet" href="<?= base_url('/theme/plugins/fullcalendar/fullcalendar.min.css') ?>">
+
+  <link rel="stylesheet" href="<?= base_url('/theme/plugins/fullcalendar/toastr.min.css') ?>">
+
+
+
+
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">  
 

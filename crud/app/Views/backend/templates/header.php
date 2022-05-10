@@ -63,6 +63,12 @@
           <i class="fas fa-fw fa-id-card"></i>
           <span>Ver Cadastros</span></a>
       </li>
+        <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/Agenda">
+          <i class="fas fa-fw fa-calendar"></i>
+          <span>Agenda</span></a>
+      </li>
 
   
 

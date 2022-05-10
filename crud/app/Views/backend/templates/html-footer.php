@@ -37,6 +37,18 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url('/theme/dist/js/adminlte.min.js') ?>"></script>
 
+
+
+
+
+
+<script src="<?= base_url('/theme/plugins//fullcalendar/fullcalendar.min.js') ?>"></script>
+
+<script src="<?= base_url('/theme/plugins/fullcalendar/toastr.min.js') ?>"></script>
+
+<script src="<?= base_url('/theme/plugins/fullcalendar/moment.min.js') ?>"></script>
+
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -53,6 +65,19 @@
       "responsive": true,
     });
   });
+</script>
+
+
+<script>
+  $(document).ready(function(){
+
+    var calendario = $("#calendario").fullCalendar({
+
+
+    });
+  }); 
+  
+
 </script>
 
  
